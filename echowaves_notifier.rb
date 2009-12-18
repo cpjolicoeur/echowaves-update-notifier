@@ -12,16 +12,17 @@ class EchowavesNotifier
   include HTTParty
   format :xml
   base_uri 'https://echowaves.com'
-  # headers 'Content-Type' => 'application/xml'
+  headers 'Content-Type' => 'application/json'
 
   def initialize( api_key )
     self.class.default_params( :user_credentials => api_key )
   end
 
   def notifications
-    self.class.get('/conversations/new_messages.atom')
+    self.class.get('/conversations/new_messages.json')
   end
 end
 
 ew = EchowavesNotifier.new( API_KEY )
-pp ew.notifications
+updates = ew.notifications
+pp updates
