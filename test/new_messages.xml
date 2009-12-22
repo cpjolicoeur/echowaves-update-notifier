@@ -1,0 +1,12 @@
+<subscriptions type="array"> 
+  <subscription> 
+    <conversation-id type="integer">7007</conversation-id> 
+    <new-messages-count type="integer">2</new-messages-count> 
+    <convo-name>winter in NewEngland</convo-name> 
+  </subscription> 
+  <subscription> 
+    <conversation-id type="integer">430</conversation-id> 
+    <new-messages-count type="integer">1</new-messages-count> 
+    <convo-name>cpjolicoeur and dmitry</convo-name> 
+  </subscription> 
+</subscriptions>
