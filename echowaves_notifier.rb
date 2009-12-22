@@ -30,7 +30,7 @@ if updates.empty?
   output = 'No new convo updates'
 else
   updates.each do |update|
-    output << "#{sprintf( "%3.3s", update['subscription']['new_messages_count'] )}: #{update['subscription']['convo_name']}\n"
+    output << "#{sprintf( "%3.3s", update['subscription']['new_messages_count'] )} - #{update['subscription']['convo_name']}\n"
   end
 end
 
