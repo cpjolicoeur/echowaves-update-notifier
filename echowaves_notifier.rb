@@ -6,7 +6,7 @@ API_KEY = 'YOUR_API_KEY_HERE'
 
 #### No need to edit below this line (unless you want to off course) ####
 
-%w(rubygems httparty pp).each { |f| require f }
+%w(rubygems httparty).each { |f| require f }
 
 class EchowavesNotifier
   include HTTParty
