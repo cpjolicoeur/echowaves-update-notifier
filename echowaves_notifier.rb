@@ -10,7 +10,7 @@ API_KEY = 'YOUR_API_KEY_HERE'
 
 class EchowavesNotifier
   include HTTParty
-  format :xml
+  format :json
   base_uri 'https://echowaves.com'
   headers 'Content-Type' => 'application/json'
 
@@ -19,10 +19,19 @@ class EchowavesNotifier
   end
 
   def notifications
-    self.class.get('/conversations/new_messages.json')
+    self.class.get( '/conversations/new_messages.json' )
   end
 end
 
-ew = EchowavesNotifier.new( API_KEY )
-updates = ew.notifications
-pp updates
+output = ''
+updates = EchowavesNotifier.new( API_KEY ).notifications
+
+if updates.empty?
+  output = 'No new convo updates'
+else
+  updates.each do |update|
+    output << "#{sprintf( "%3.3s", update['subscription']['new_messages_count'] )}: #{update['subscription']['convo_name']}\n"
+  end
+end
+
+puts output
