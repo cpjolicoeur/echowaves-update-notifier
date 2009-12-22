@@ -1,1 +1,10 @@
-Echowaves Update Notifier
+==== Echowaves Update Notifier ====
+
+Super simple update script that can be used with GeekTool or any other parsing tool you want.
+
+Simply update the API_KEY with your user api key found on your Echowaves.com profile page, and 
+run the script.
+
+== REQUIREMENTS ==
+
+httparty gem
